@@ -30,14 +30,14 @@ public class RandomMovement : MonoBehaviour
         {
             if (thingToMove.GetComponent<Renderer>().isVisible)
             {
-                float timeTaken = 60;
+                float timeTaken = 1;
 
                 //should result in grouping behaviour
                 if (Random.Range(0, 5) != 1 && !(Vector2.Distance(thingToMove.position, targetDestination) <= 1))
                 //if (Random.Range(0, 5) != 1)
                 {
-                    targetDestination += new Vector2(Random.Range(minXIncrement, maxXIncrement), Random.Range(minYIncrement, maxYIncrement));
-                    timeTaken = Random.Range(30f, 60f);
+                    targetDestination -= new Vector2(Random.Range(minXIncrement, maxXIncrement), Random.Range(minYIncrement, maxYIncrement));
+                    timeTaken = Random.Range(1f, 1f);
                 }
 
                 StartCoroutine(PositionLerp(thingToMove, thingToMove.position, targetDestination, timeTaken));

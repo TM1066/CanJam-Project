@@ -1986,8 +1986,8 @@ MonoBehaviour:
   targetDestination: {x: 0, y: 0}
   minXIncrement: -2
   maxXIncrement: 2
-  minYIncrement: -10
-  maxYIncrement: 10
+  minYIncrement: -1
+  maxYIncrement: 1
   people:
   - {fileID: 1295715466}
   - {fileID: 317802181}

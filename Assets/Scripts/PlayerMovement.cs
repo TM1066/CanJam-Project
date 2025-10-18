@@ -30,7 +30,9 @@ public class PlayerMovement : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.D))
         {
-            this.transform.position += new Vector3(movementIncrement,0);
+            this.transform.position += new Vector3(movementIncrement, 0);
         }
+
+        Camera.main.transform.position = this.transform.position;
     }
 }

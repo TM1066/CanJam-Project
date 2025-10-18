@@ -33,6 +33,6 @@ public class PlayerMovement : MonoBehaviour
             this.transform.position += new Vector3(movementIncrement, 0);
         }
 
-        Camera.main.transform.position = this.transform.position;
+        //Camera.main.transform.position = this.transform.position;
     }
 }

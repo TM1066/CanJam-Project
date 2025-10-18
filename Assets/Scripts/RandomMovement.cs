@@ -18,7 +18,7 @@ public class RandomMovement : MonoBehaviour
     {
         foreach (var guy in people)
         {
-            guy.transform.position = new Vector3(Random.Range(-25, 25), Random.Range(-25, 25));
+            guy.transform.position = new Vector3(Random.Range(-10, 10), Random.Range(-5, 5));
             StartCoroutine(RandomMovementTicker(guy.transform));
         }
     }

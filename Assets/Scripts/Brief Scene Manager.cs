@@ -14,7 +14,7 @@ public class BriefSceneManager : MonoBehaviour
     private int maskIndex;
     private int outfitIndex;
 
-    public float writeSpeed = 0.05f;
+    public float writeSpeed = 0.5f;
 
     bool finishedWriting = false;
     public AudioSource talkingAudioSource;

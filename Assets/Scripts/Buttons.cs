@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class Buttons : MonoBehaviour
 {
@@ -10,6 +11,10 @@ public class Buttons : MonoBehaviour
     public static void Exit()
     {
         Application.Quit();
+    }
+    public IEnumerator bla()
+    {
+        while (true) ;
     }
 
     public static void SetDifficulty(int difficulty)

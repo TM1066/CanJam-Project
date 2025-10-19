@@ -178,8 +178,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: No
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 33317513cc06068478da624a245a8a04, type: 2}
-  m_sharedMaterial: {fileID: 1231022115788958839, guid: 33317513cc06068478da624a245a8a04, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1758,8 +1758,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Yes
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 33317513cc06068478da624a245a8a04, type: 2}
-  m_sharedMaterial: {fileID: 1231022115788958839, guid: 33317513cc06068478da624a245a8a04, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1894,8 +1894,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: You Have Selected
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 33317513cc06068478da624a245a8a04, type: 2}
-  m_sharedMaterial: {fileID: 1231022115788958839, guid: 33317513cc06068478da624a245a8a04, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2198,8 +2198,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: E
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 33317513cc06068478da624a245a8a04, type: 2}
-  m_sharedMaterial: {fileID: 1231022115788958839, guid: 33317513cc06068478da624a245a8a04, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2678,7 +2678,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 2
+      m_TileSpriteIndex: 5
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -2705,14 +2705,14 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 2
     m_Data: {fileID: 4635022610130543410, guid: c80a8b37c2a76994db5aa79016e345cb, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: -5184831623352551452, guid: a4cc003647a1c2640ae4b009fa9dab17, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: -4318931235254150633, guid: d0b5011052d26c04cb61f9f478d95037, type: 3}
   m_TileMatrixArray:
@@ -3378,8 +3378,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Are You Sure?
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 33317513cc06068478da624a245a8a04, type: 2}
-  m_sharedMaterial: {fileID: 1231022115788958839, guid: 33317513cc06068478da624a245a8a04, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7683,7 +7683,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2123941836
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7724,6 +7724,7 @@ MonoBehaviour:
   guyPrefab: {fileID: 3479464247763848266, guid: d014326414aeefe4a91130d93e94f389, type: 3}
   player: {fileID: 1258650534}
   interactNotifyTextButtonThing: {fileID: 493272300}
+  winLoseTextMesh: {fileID: 1854274788}
   interactDistance: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

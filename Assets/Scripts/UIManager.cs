@@ -80,7 +80,7 @@ public class UIManager : MonoBehaviour
 
     public void ConfirmCharacter()
     {
-        Time.timeScale = 0;
+        Time.timeScale = 0.75f;
         winLoseTextMesh.gameObject.SetActive(true);
         if (GameVariables.selectedCharacter.GetComponent<NPC>().isAttention)
         {

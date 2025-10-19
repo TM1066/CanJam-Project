@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9e176e564811bf54185cd14b8ace22d4
+guid: b56e2bd0d6136d8408ab7b4fe9ba0b97
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2912586956421745361
-    second: sad ternna_0
+      213: 3568493396369538483
+    second: Greyscale - Torso walk -2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -178,13 +178,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: sad ternna_0
+      name: Greyscale - Torso walk -2_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1080
-        height: 1080
+        width: 16
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,8 +193,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1da44f2c7669b6820800000000000000
-      internalID: 2912586956421745361
+      spriteID: 3bdfee956d5d58130800000000000000
+      internalID: 3568493396369538483
       vertices: []
       indices: 
       edges: []
@@ -213,7 +213,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      sad ternna_0: 2912586956421745361
+      Greyscale - Torso walk -2_0: 3568493396369538483
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

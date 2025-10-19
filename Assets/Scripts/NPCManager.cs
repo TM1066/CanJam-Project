@@ -35,10 +35,17 @@ public class NPCManager : MonoBehaviour
             }
             else
             {
-                //randomising outfits
                 guy.GetComponent<NPC>().hatRenderer.sprite = hats[Random.Range(0, hats.Count)];
                 guy.GetComponent<NPC>().maskRenderer.sprite = masks[Random.Range(0, masks.Count)];
                 guy.GetComponent<NPC>().outfitColor = new Color(Random.Range(0.5f, 1f), Random.Range(0.5f, 1f), Random.Range(0.5f, 1f)); // bright colors are easier to recognise
+
+
+                //randomising outfits
+                foreach (var guy2 in FindObjectsByType<NPC>(FindObjectsSortMode.None))
+                {
+
+                }
+                
             }
 
             NPCMovementManager.people.Add(guy);

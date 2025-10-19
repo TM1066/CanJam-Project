@@ -30,7 +30,7 @@ public class BriefSceneManager : MonoBehaviour
         GameVariables.attentionMask = maskIndex;
         GameVariables.attentionOutfit = outfitColor;
 
-        introText += $"{GameVariables.hatNames[hatIndex]} hat, a {GameVariables.maskNames[maskIndex]} mask and a {PredictColourName.GetColourName((Color32)outfitColor)} coloured outfit. that's just how stylish the guy is. Good luck! Don't let me down.";
+        introText += $"{GameVariables.hatNames[hatIndex]} hat, a {GameVariables.maskNames[maskIndex]} mask and a {PredictColourName.GetColourName((Color32)outfitColor)}-ish coloured outfit. that's just how stylish the guy is. Good luck! Don't let me down.";
 
         StartCoroutine(WriteText());
 

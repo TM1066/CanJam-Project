@@ -1,5 +1,7 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class NPC : MonoBehaviour
 {
@@ -21,6 +23,10 @@ public class NPC : MonoBehaviour
 
 
     public Animator animator;
+
+
+    public Sprite brokenPlagueMask;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -44,9 +50,25 @@ public class NPC : MonoBehaviour
             {
                 moving = false;
             }
+            else
+            {
+                moving = true;
+            }
         }
         tempLocation = this.transform.position;
         animator.SetBool("moving", moving);
+
+
+        //fixing masks
+        if (maskRenderer.sprite == brokenPlagueMask)
+        {
+            maskRenderer.gameObject.transform.localPosition = new Vector2(0.275f, maskRenderer.gameObject.transform.localPosition.y);
+        }
+        else
+        {
+            maskRenderer.gameObject.transform.localPosition = new Vector2(0, maskRenderer.gameObject.transform.localPosition.y);
+        }
+
     }
 
     public void SelectCharacter()
@@ -62,6 +84,8 @@ public class NPC : MonoBehaviour
 
 
             tennaWin.SetActive(true);
+            GameVariables.wonGame = true;
+            GameVariables.gamesWon += 1;
         }
         else
         {
@@ -71,7 +95,19 @@ public class NPC : MonoBehaviour
 
 
             tennaLose.SetActive(true);
+            GameVariables.lostGame = true;
+            GameVariables.gamesLost -= 1;
         }
+        StartCoroutine(WaitForEnd());
+    }
+
+    private IEnumerator WaitForEnd()
+    {
+        yield return new WaitForSecondsRealtime(10);
+
+        GameVariables.PlayerCanMove = true;
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Main Menu");
     }
 
 }

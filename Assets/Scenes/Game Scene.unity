@@ -15201,10 +15201,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1550, y: 600}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -16664,6 +16664,14 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 2a3ed15432124514499ec61e5e7b5476, type: 3}
   - {fileID: 21300000, guid: 43b9f239ab5a1db458df49a4810de526, type: 3}
   - {fileID: 21300000, guid: 763dc60261e42634689ea6bd56c84f8c, type: 3}
+  colours:
+  - {r: 1, g: 0, b: 0, a: 1}
+  - {r: 1, g: 0.6470588, b: 0, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  - {r: 0, g: 1, b: 0, a: 1}
+  - {r: 0, g: 0, b: 1, a: 1}
+  - {r: 0.2941177, g: 0, b: 0.509804, a: 1}
+  - {r: 0.9333334, g: 0.509804, b: 0.9333334, a: 1}
   NPCMovementManager: {fileID: 1396505678}
   peopleAmount: 15
 --- !u!1 &1606125661
@@ -18394,7 +18402,7 @@ MonoBehaviour:
   player: {fileID: 1258650534}
   interactNotifyTextButtonThing: {fileID: 493272300}
   winLoseTextMesh: {fileID: 1854274788}
-  interactDistance: 1
+  interactDistance: 2
   bgmPlayer: {fileID: 1258650538}
   winAudio: {fileID: 8300000, guid: 4d88bd5308cfe6942a3a23b1d0eba7a9, type: 3}
   loseAudio: {fileID: 8300000, guid: 2ab7d3de45da2f74392b79063effce4a, type: 3}

@@ -7,4 +7,14 @@ public class Buttons : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName);
     }
+    public static void Exit()
+    {
+        Application.Quit();
+    }
+
+    public static void SetDifficulty(int difficulty)
+    {
+        GameVariables.difficulty = difficulty;
+        SceneManager.LoadScene("Brief Scene");
+    }
 }

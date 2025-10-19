@@ -241,6 +241,7 @@ MonoBehaviour:
   tennaWin: {fileID: 7806757992602028116}
   tennaLose: {fileID: 1334147338012928432}
   animator: {fileID: 924582221017066335}
+  brokenPlagueMask: {fileID: 21300000, guid: 00709b1a6b60e8d4cb6673402b6b0c72, type: 3}
 --- !u!61 &4098185895723081083
 BoxCollider2D:
   m_ObjectHideFlags: 0

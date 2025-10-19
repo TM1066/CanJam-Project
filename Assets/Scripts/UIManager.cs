@@ -13,7 +13,7 @@ public class UIManager : MonoBehaviour
     //public GameObject interactNotifyTextButtonThing;
     public TextMeshProUGUI interactNotifyTextButtonThing;
     public TextMeshProUGUI winLoseTextMesh;
-    public float interactDistance = 1;
+    public float interactDistance = 0.5f;
 
 
 
@@ -24,7 +24,7 @@ public class UIManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        interactNotifyTextButtonThing.text = GameVariables.playerChooseButton.ToString();
+        interactNotifyTextButtonThing.text = "E";
     }
 
     // Update is called once per frame

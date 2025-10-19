@@ -12,11 +12,12 @@ public class BriefSceneManager : MonoBehaviour
 
     private int hatIndex;
     private int maskIndex;
-    private Color outfitColor;
+    private int outfitIndex;
 
     public float writeSpeed = 0.05f;
 
     bool finishedWriting = false;
+    public AudioSource talkingAudioSource;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -24,13 +25,13 @@ public class BriefSceneManager : MonoBehaviour
     {
         hatIndex = Random.Range(0, 8);
         maskIndex = Random.Range(0, 8);
-        outfitColor = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
+        outfitIndex = Random.Range(0, 6);
 
         GameVariables.attentionHat = hatIndex;
         GameVariables.attentionMask = maskIndex;
-        GameVariables.attentionOutfit = outfitColor;
+        GameVariables.attentionOutfit = outfitIndex;
 
-        introText += $"{GameVariables.hatNames[hatIndex]} hat, a {GameVariables.maskNames[maskIndex]} mask and a {PredictColourName.GetColourName((Color32)outfitColor)}-ish coloured outfit. that's just how stylish the guy is. Good luck! Don't let me down.";
+        introText += $"{GameVariables.hatNames[hatIndex]} hat, a {GameVariables.maskNames[maskIndex]} mask and a {GameVariables.colourNames[outfitIndex]}-ish coloured outfit. that's just how stylish the guy is. Good luck! Don't let me down.";
 
         StartCoroutine(WriteText());
 
@@ -51,13 +52,14 @@ public class BriefSceneManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.anyKeyDown && finishedWriting)
+        if (Input.anyKeyDown && !talkingAudioSource.isPlaying)
         {
             SceneManager.LoadScene("Game Scene");
         }
-        else if (Input.anyKeyDown)
+        else if (Input.anyKeyDown && talkingAudioSource.isPlaying)
         {
-            writeSpeed = 0;
+            talkingAudioSource.pitch += 0.1f;
+            writeSpeed -= 0.01f;
         }
     }
 }

@@ -18395,9 +18395,9 @@ MonoBehaviour:
   interactNotifyTextButtonThing: {fileID: 493272300}
   winLoseTextMesh: {fileID: 1854274788}
   interactDistance: 1
-  bgmPlayer: {fileID: 0}
+  bgmPlayer: {fileID: 1258650538}
   winAudio: {fileID: 8300000, guid: 4d88bd5308cfe6942a3a23b1d0eba7a9, type: 3}
-  loseAudio: {fileID: 0}
+  loseAudio: {fileID: 8300000, guid: 2ab7d3de45da2f74392b79063effce4a, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

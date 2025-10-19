@@ -14,6 +14,10 @@ public class BriefSceneManager : MonoBehaviour
     private int maskIndex;
     private Color outfitColor;
 
+    public float writeSpeed = 0.05f;
+
+    bool finishedWriting = false;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -22,7 +26,11 @@ public class BriefSceneManager : MonoBehaviour
         maskIndex = Random.Range(0, 8);
         outfitColor = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
 
-        introText += $"{hatIndex} hat, a {maskIndex} mask and a {PredictColourName.GetColourName((Color32)outfitColor)} coloured outfit. that's just how stylish the guy is. Good luck! Don't let me down.";
+        GameVariables.attentionHat = hatIndex;
+        GameVariables.attentionMask = maskIndex;
+        GameVariables.attentionOutfit = outfitColor;
+
+        introText += $"{GameVariables.hatNames[hatIndex]} hat, a {GameVariables.maskNames[maskIndex]} mask and a {PredictColourName.GetColourName((Color32)outfitColor)} coloured outfit. that's just how stylish the guy is. Good luck! Don't let me down.";
 
         StartCoroutine(WriteText());
 
@@ -35,16 +43,21 @@ public class BriefSceneManager : MonoBehaviour
             //if (c != '\\');
             introTextMesh.text += c;
 
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(writeSpeed);
         }
+        finishedWriting = true;
         yield return null;
     }
 
     void Update()
     {
-        if (Input.anyKeyDown)
+        if (Input.anyKeyDown && finishedWriting)
         {
             SceneManager.LoadScene("Game Scene");
+        }
+        else if (Input.anyKeyDown)
+        {
+            writeSpeed = 0;
         }
     }
 }

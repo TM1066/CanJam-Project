@@ -13,6 +13,8 @@ public class NPCManager : MonoBehaviour
 
     public int peopleAmount;
 
+    private bool attentionSpawned = false;
+
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -22,18 +24,24 @@ public class NPCManager : MonoBehaviour
         {
             var guy = Instantiate(personPrefab,this.transform);
 
-            //randomising outfits
-            guy.GetComponent<NPC>().hatRenderer.sprite = hats[Random.Range(0, hats.Count)];
-            guy.GetComponent<NPC>().maskRenderer.sprite = masks[Random.Range(0, hats.Count)];
-            guy.GetComponent<NPC>().outfitColor = new Color(Random.Range(0.5f, 1f), Random.Range(0.5f, 1f), Random.Range(0.5f, 1f)); // bright colors are easier to recognise
+            if (!attentionSpawned)
+            {
+                guy.GetComponent<NPC>().isAttention = true;
+                guy.GetComponent<NPC>().hatRenderer.sprite = hats[GameVariables.attentionHat];
+                guy.GetComponent<NPC>().maskRenderer.sprite = masks[GameVariables.attentionMask];
+                guy.GetComponent<NPC>().outfitColor = GameVariables.attentionOutfit; // bright colors are easier to recognise
+
+                attentionSpawned = true;
+            }
+            else
+            {
+                //randomising outfits
+                guy.GetComponent<NPC>().hatRenderer.sprite = hats[Random.Range(0, hats.Count)];
+                guy.GetComponent<NPC>().maskRenderer.sprite = masks[Random.Range(0, masks.Count)];
+                guy.GetComponent<NPC>().outfitColor = new Color(Random.Range(0.5f, 1f), Random.Range(0.5f, 1f), Random.Range(0.5f, 1f)); // bright colors are easier to recognise
+            }
 
             NPCMovementManager.people.Add(guy);
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

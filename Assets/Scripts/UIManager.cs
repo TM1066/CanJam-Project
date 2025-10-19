@@ -7,10 +7,12 @@ public class UIManager : MonoBehaviour
     public GameObject selectConfirmScreen;
     public Transform selectedGuyParent;
     public GameObject guyPrefab;
+    private GameObject guyPicture;
 
     public Transform player; //doing this here is dumb but quick
     //public GameObject interactNotifyTextButtonThing;
     public TextMeshProUGUI interactNotifyTextButtonThing;
+    public TextMeshProUGUI winLoseTextMesh;
     public float interactDistance = 1;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -22,21 +24,26 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
-
-
-
         if (GameVariables.selectedCharacter != null && !selectConfirmScreen.activeSelf)
         {
             selectConfirmScreen.SetActive(true);
-            var guy = Instantiate(guyPrefab, selectedGuyParent);
-            guy.GetComponent<NPC>().hatRenderer.sprite = GameVariables.selectedCharacter.GetComponent<NPC>().hatRenderer.sprite;
-            guy.GetComponent<NPC>().maskRenderer.sprite = GameVariables.selectedCharacter.GetComponent<NPC>().maskRenderer.sprite;
-            guy.GetComponent<NPC>().hatRenderer.sprite = GameVariables.selectedCharacter.GetComponent<NPC>().hatRenderer.sprite;
+            guyPicture = Instantiate(guyPrefab, selectedGuyParent);
+            guyPicture.GetComponent<NPC>().hatRenderer.sprite = GameVariables.selectedCharacter.GetComponent<NPC>().hatRenderer.sprite;
+            guyPicture.GetComponent<NPC>().maskRenderer.sprite = GameVariables.selectedCharacter.GetComponent<NPC>().maskRenderer.sprite;
+            guyPicture.GetComponent<NPC>().outfitColor = GameVariables.selectedCharacter.GetComponent<NPC>().outfitColor;
+            foreach (var renderer in guyPicture.GetComponentsInChildren<SpriteRenderer>())
+            {
+                renderer.sortingOrder = 1000;
+            }
+            guyPicture.transform.localScale = new Vector3(50, 50);
         }
-        else
+        else if (GameVariables.selectedCharacter == null && selectConfirmScreen.activeSelf)
         {
+            if (guyPicture)
+            {
+                Destroy(guyPicture);
+            }
+
             selectConfirmScreen.SetActive(false);
         }
 
@@ -47,7 +54,7 @@ public class UIManager : MonoBehaviour
             {
                 interactNotifyTextButtonThing.gameObject.SetActive(true);
 
-                if (Input.GetKeyDown(GameVariables.playerChooseButton))
+                if (Input.GetKeyDown(GameVariables.playerChooseButton) && GameVariables.PlayerCanMove)
                 {
                     GameVariables.selectedCharacter = guy.gameObject;
                 }
@@ -57,6 +64,28 @@ public class UIManager : MonoBehaviour
                 interactNotifyTextButtonThing.gameObject.SetActive(false);
             }
         }
+    }
 
+    public void DeselectCharacter()
+    {
+        GameVariables.selectedCharacter = null;
+    }
+
+    public void ConfirmCharacter()
+    {
+        Time.timeScale = 0;
+        winLoseTextMesh.gameObject.SetActive(true);
+        if (GameVariables.selectedCharacter.GetComponent<NPC>().isAttention)
+        {
+            winLoseTextMesh.text = "You Ween!";
+        }
+        else
+        {
+            winLoseTextMesh.text = "You Fail!";
+        }
+
+
+        GameVariables.selectedCharacter.GetComponent<NPC>().SelectCharacter();
+        GameVariables.selectedCharacter = null;
     }
 }

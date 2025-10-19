@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class NPC : MonoBehaviour
@@ -14,6 +15,9 @@ public class NPC : MonoBehaviour
     public SpriteRenderer maskRenderer;
     public SpriteRenderer outfitRenderer;
     public Color outfitColor;
+
+    public GameObject tennaWin;
+    public GameObject tennaLose;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -32,7 +36,7 @@ public class NPC : MonoBehaviour
         }
         else
         {
-            this.transform.rotation = new Quaternion(0,-180,0,this.transform.rotation.w);
+            this.transform.rotation = new Quaternion(0, -180, 0, this.transform.rotation.w);
             if (tempLocation == this.transform.position)
             {
                 moving = false;
@@ -41,9 +45,29 @@ public class NPC : MonoBehaviour
         tempLocation = this.transform.position;
     }
 
-    void OnMouseEnter()
+    public void SelectCharacter()
     {
-        Debug.Log($"Hovering Over {this.gameObject.name}");
+        GameVariables.PlayerCanMove = false;
+
+
+        if (isAttention)
+        {
+            hatRenderer.gameObject.SetActive(false);
+            maskRenderer.gameObject.SetActive(false);
+            outfitRenderer.gameObject.SetActive(false);
+
+
+            tennaWin.SetActive(true);
+        }
+        else
+        {
+            hatRenderer.gameObject.SetActive(false);
+            maskRenderer.gameObject.SetActive(false);
+            outfitRenderer.gameObject.SetActive(false);
+
+
+            tennaLose.SetActive(true);
+        }
     }
 
 }

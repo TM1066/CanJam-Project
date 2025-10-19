@@ -19,6 +19,9 @@ public class NPC : MonoBehaviour
     public GameObject tennaWin;
     public GameObject tennaLose;
 
+
+    public Animator animator;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -43,6 +46,7 @@ public class NPC : MonoBehaviour
             }
         }
         tempLocation = this.transform.position;
+        animator.SetBool("moving", moving);
     }
 
     public void SelectCharacter()

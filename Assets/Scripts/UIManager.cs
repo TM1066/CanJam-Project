@@ -86,11 +86,13 @@ public class UIManager : MonoBehaviour
         {
             winLoseTextMesh.text = "You Ween!";
             bgmPlayer.clip = winAudio;
+            bgmPlayer.Play();
         }
         else
         {
             winLoseTextMesh.text = "You Fail!";
             bgmPlayer.clip = loseAudio;
+            bgmPlayer.Play();
         }
 
 

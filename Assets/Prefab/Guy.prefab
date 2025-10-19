@@ -240,6 +240,7 @@ MonoBehaviour:
   outfitColor: {r: 0, g: 0, b: 0, a: 0}
   tennaWin: {fileID: 7806757992602028116}
   tennaLose: {fileID: 1334147338012928432}
+  animator: {fileID: 924582221017066335}
 --- !u!61 &4098185895723081083
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -323,6 +324,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4808394268167499311}
   - component: {fileID: 6236483631469999462}
+  - component: {fileID: 924582221017066335}
   m_Layer: 0
   m_Name: Outfit
   m_TagString: Untagged
@@ -392,7 +394,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: b36bd1111e52ea841809573cdeff2fba, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f4c95b9ac32edb541b8d1c647182d1a1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -403,6 +405,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &924582221017066335
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3765179928034201139}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cd69f127b5fc6744395185d4d528b245, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4022700109653726009
 GameObject:
   m_ObjectHideFlags: 0

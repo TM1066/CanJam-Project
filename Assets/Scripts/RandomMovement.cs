@@ -1,15 +1,18 @@
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
-
+//General NPC Movement Manager
 public class RandomMovement : MonoBehaviour
 {
-    public int minXIncrement = -2;
-    public int maxXIncrement = 2;
+    public int minXIncrement = -4;
+    public int maxXIncrement = 4;
     public int minYIncrement = -1;
     public int maxYIncrement = 1;
 
-    public GameObject[] people;
+    public Vector3 maxPositiveVector;
+    public Vector3 maxNegativeVector;
+
+    public List<GameObject> people = new List<GameObject>();
     private Dictionary<Transform, Vector2> personalTargets = new Dictionary<Transform, Vector2>();
 
 
@@ -22,7 +25,8 @@ public class RandomMovement : MonoBehaviour
             //populating targets
             personalTargets.Add(guy.transform, guy.transform.position += new Vector3(Random.Range(minXIncrement, maxXIncrement), Random.Range(minYIncrement, maxYIncrement)));
 
-            guy.transform.position = new Vector3(Random.Range(-10, 10), Random.Range(-5, 5));
+            //randomise Positions
+            guy.transform.position = new Vector3(Random.Range(maxNegativeVector.x, maxPositiveVector.x), Random.Range(maxNegativeVector.y, maxPositiveVector.y));
             StartCoroutine(RandomMovementTicker(guy.transform));
         }
     }
@@ -32,7 +36,7 @@ public class RandomMovement : MonoBehaviour
         
         while (true)
         {
-            if (thingToMove.GetComponent<Renderer>().isVisible && Random.Range(0,3) == 1)
+            if (thingToMove.GetComponentInChildren<Renderer>().isVisible && Random.Range(0,3) == 1)
             {
                 float timeTaken = 10;
 
@@ -43,6 +47,12 @@ public class RandomMovement : MonoBehaviour
                     personalTargets[thingToMove] -= new Vector2(Random.Range(minXIncrement, maxXIncrement), Random.Range(minYIncrement, maxYIncrement));
                     timeTaken = Random.Range(1f, 10f);
                 }
+
+                //clamping Vectors so they stay in rooms - Messy
+                if (personalTargets[thingToMove].x > maxPositiveVector.x) { personalTargets[thingToMove] = new Vector2(maxPositiveVector.x, personalTargets[thingToMove].y); }
+                if (personalTargets[thingToMove].y > maxPositiveVector.y) { personalTargets[thingToMove] = new Vector2(personalTargets[thingToMove].x, maxPositiveVector.y); }
+                if (personalTargets[thingToMove].x < maxNegativeVector.x) { personalTargets[thingToMove] = new Vector2(maxNegativeVector.x, personalTargets[thingToMove].y); }
+                if (personalTargets[thingToMove].y < maxNegativeVector.y) { personalTargets[thingToMove] = new Vector2(personalTargets[thingToMove].x, maxNegativeVector.y); }
 
                 StartCoroutine(PositionLerp(thingToMove, thingToMove.position, personalTargets[thingToMove], timeTaken));
 

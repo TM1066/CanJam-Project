@@ -5,6 +5,8 @@ public class UIManager : MonoBehaviour
 {
 
     public GameObject selectConfirmScreen;
+    public Transform selectedGuyParent;
+    public GameObject guyPrefab;
 
     public Transform player; //doing this here is dumb but quick
     //public GameObject interactNotifyTextButtonThing;
@@ -21,13 +23,17 @@ public class UIManager : MonoBehaviour
     void Update()
     {
 
-        
 
 
 
-        if (GameVariables.selectedCharacter != null)
+
+        if (GameVariables.selectedCharacter != null && !selectConfirmScreen.activeSelf)
         {
             selectConfirmScreen.SetActive(true);
+            var guy = Instantiate(guyPrefab, selectedGuyParent);
+            guy.GetComponent<NPC>().hatRenderer.sprite = GameVariables.selectedCharacter.GetComponent<NPC>().hatRenderer.sprite;
+            guy.GetComponent<NPC>().maskRenderer.sprite = GameVariables.selectedCharacter.GetComponent<NPC>().maskRenderer.sprite;
+            guy.GetComponent<NPC>().hatRenderer.sprite = GameVariables.selectedCharacter.GetComponent<NPC>().hatRenderer.sprite;
         }
         else
         {

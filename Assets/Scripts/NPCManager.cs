@@ -43,7 +43,7 @@ public class NPCManager : MonoBehaviour
                 //randomising outfits
                 foreach (var guy2 in FindObjectsByType<NPC>(FindObjectsSortMode.None))
                 {
-                    while (hats.IndexOf(guy2.hatRenderer.sprite) == GameVariables.attentionHat && (hats.IndexOf(guy2.hatRenderer.sprite) == GameVariables.attentionHat))
+                    while (hats.IndexOf(guy2.hatRenderer.sprite) == GameVariables.attentionHat && (hats.IndexOf(guy2.hatRenderer.sprite) == GameVariables.attentionHat) && !guy2.isAttention)
                     {
                         guy2.GetComponent<NPC>().hatRenderer.sprite = hats[Random.Range(0, hats.Count)];
                         guy2.GetComponent<NPC>().maskRenderer.sprite = masks[Random.Range(0, masks.Count)];

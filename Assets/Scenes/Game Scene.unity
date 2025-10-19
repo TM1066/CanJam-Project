@@ -7724,7 +7724,6 @@ MonoBehaviour:
   guyPrefab: {fileID: 3479464247763848266, guid: d014326414aeefe4a91130d93e94f389, type: 3}
   player: {fileID: 1258650534}
   interactNotifyTextButtonThing: {fileID: 493272300}
-  winLoseTextMesh: {fileID: 1854274788}
   interactDistance: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

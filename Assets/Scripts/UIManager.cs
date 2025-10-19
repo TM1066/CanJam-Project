@@ -15,6 +15,12 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI winLoseTextMesh;
     public float interactDistance = 1;
 
+
+
+    public AudioSource bgmPlayer;
+    public AudioClip winAudio;
+    public AudioClip loseAudio;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -31,6 +37,7 @@ public class UIManager : MonoBehaviour
             guyPicture.GetComponent<NPC>().hatRenderer.sprite = GameVariables.selectedCharacter.GetComponent<NPC>().hatRenderer.sprite;
             guyPicture.GetComponent<NPC>().maskRenderer.sprite = GameVariables.selectedCharacter.GetComponent<NPC>().maskRenderer.sprite;
             guyPicture.GetComponent<NPC>().outfitColor = GameVariables.selectedCharacter.GetComponent<NPC>().outfitColor;
+            guyPicture.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
             foreach (var renderer in guyPicture.GetComponentsInChildren<SpriteRenderer>())
             {
                 renderer.sortingOrder = 1000;
@@ -78,10 +85,12 @@ public class UIManager : MonoBehaviour
         if (GameVariables.selectedCharacter.GetComponent<NPC>().isAttention)
         {
             winLoseTextMesh.text = "You Ween!";
+            bgmPlayer.clip = winAudio;
         }
         else
         {
             winLoseTextMesh.text = "You Fail!";
+            bgmPlayer.clip = loseAudio;
         }
 
 

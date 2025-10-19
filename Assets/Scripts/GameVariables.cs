@@ -19,5 +19,5 @@ public static class GameVariables
 
 
     public static List<string> hatNames = new List<string>() {"Big Plant","Black Wig", "Blonde Wig", "Rude", "Plant Pot", "Propellor","Top", "Wally Style", "Witch"};
-    public static List<string> maskNames = new List<string>() {"Clown","Corpse","Religious","Pickled Zombie","Plague Doctor","Red Hockey","Vampyre","Werewolf"};
+    public static List<string> maskNames = new List<string>() {"Clown","Corpse","Religious","Pickled Zombie","Plague Doctor","Red Hockey","Vampyre","Werewolf","Olivier"};
 }

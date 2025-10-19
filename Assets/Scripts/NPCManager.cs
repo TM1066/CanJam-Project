@@ -20,12 +20,12 @@ public class NPCManager : MonoBehaviour
     {
         for (int i = 0; i <= peopleAmount; i++)
         {
-            var guy = Instantiate(personPrefab);
+            var guy = Instantiate(personPrefab,this.transform);
 
             //randomising outfits
             guy.GetComponent<NPC>().hatRenderer.sprite = hats[Random.Range(0, hats.Count)];
             guy.GetComponent<NPC>().maskRenderer.sprite = masks[Random.Range(0, hats.Count)];
-            guy.GetComponent<NPC>().outfitColor = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
+            guy.GetComponent<NPC>().outfitColor = new Color(Random.Range(0.5f, 1f), Random.Range(0.5f, 1f), Random.Range(0.5f, 1f)); // bright colors are easier to recognise
 
             NPCMovementManager.people.Add(guy);
         }

@@ -11,28 +11,28 @@ public class PlayerMovement : MonoBehaviour
     {
         if (GameVariables.PlayerCanMove)
         {
-            if (Input.GetKeyDown(KeyCode.LeftShift))
+            if (Input.GetKeyDown(KeyCode.X))
             {
                 movementIncrement *= 2;
             }
-            if (Input.GetKeyUp(KeyCode.LeftShift))
+            if (Input.GetKeyUp(KeyCode.X))
             {
                 movementIncrement /= 2;
             }
 
-            if (Input.GetKey(KeyCode.W))
+            if (Input.GetKey(KeyCode.UpArrow))
             {
                 this.transform.position += new Vector3(0, movementIncrement);
             }
-            if (Input.GetKey(KeyCode.S))
+            if (Input.GetKey(KeyCode.DownArrow))
             {
                 this.transform.position += new Vector3(0, -movementIncrement);
             }
-            if (Input.GetKey(KeyCode.A))
+            if (Input.GetKey(KeyCode.LeftArrow))
             {
                 this.transform.position += new Vector3(-movementIncrement, 0);
             }
-            if (Input.GetKey(KeyCode.D))
+            if (Input.GetKey(KeyCode.RightArrow))
             {
                 this.transform.position += new Vector3(movementIncrement, 0);
             }

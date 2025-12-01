@@ -9,13 +9,15 @@ public static class GameVariables
     public static int attentionMask = 0;
     public static int attentionOutfit = 0;
 
+    public static bool muted = false;
+
     public static GameObject selectedCharacter = null;
 
     public static bool PlayerCanMove = true;
 
 
     //Controls
-    public static KeyCode playerChooseButton = KeyCode.E;
+    public static KeyCode playerChooseButton = KeyCode.Z;
 
     public static bool wonGame = false;
     public static int gamesWon = 0;

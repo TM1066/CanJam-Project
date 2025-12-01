@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 493007769}
   - component: {fileID: 493007768}
   - component: {fileID: 493007772}
+  - component: {fileID: 493007773}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -245,6 +246,18 @@ MonoBehaviour:
   introTextMesh: {fileID: 672052653}
   writeSpeed: 0.05
   talkingAudioSource: {fileID: 519420033}
+--- !u!114 &493007773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 493007767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaa3f42306e9bd54e8c56c91fdbc407c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameAudioManager
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

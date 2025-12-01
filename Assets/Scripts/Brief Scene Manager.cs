@@ -30,6 +30,10 @@ public class BriefSceneManager : MonoBehaviour
         GameVariables.attentionHat = hatIndex;
         GameVariables.attentionMask = maskIndex;
         GameVariables.attentionOutfit = outfitIndex;
+        if (GameVariables.muted)
+        {
+            talkingAudioSource.volume = 0;
+        }
 
         introText += $"{GameVariables.hatNames[hatIndex]} hat, a {GameVariables.maskNames[maskIndex]} mask and a {GameVariables.colourNames[outfitIndex]}-ish coloured outfit. that's just how stylish the guy is. Good luck! Don't let me down.";
 
@@ -52,7 +56,7 @@ public class BriefSceneManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.anyKeyDown && !talkingAudioSource.isPlaying)
+        if (Input.anyKeyDown && (!talkingAudioSource.isPlaying || GameVariables.muted))
         {
             SceneManager.LoadScene("Game Scene");
         }

@@ -24,7 +24,7 @@ public class UIManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        interactNotifyTextButtonThing.text = "E";
+        interactNotifyTextButtonThing.text = "A";
     }
 
     // Update is called once per frame

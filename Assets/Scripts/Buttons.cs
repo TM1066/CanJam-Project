@@ -22,4 +22,9 @@ public class Buttons : MonoBehaviour
         GameVariables.difficulty = difficulty;
         SceneManager.LoadScene("Brief Scene");
     }
+
+    public static void MuteUnmuteGame()
+    {
+        GameVariables.muted = !GameVariables.muted;
+    }
 }
